@@ -7,9 +7,9 @@
       </div>
 
       <nav class="nav">
-        <a class="nav-link active">Home</a>
-        <a class="nav-link">HeatMap</a>
-        <a class="nav-link">Cool Refuges</a>
+        <RouterLink to="/" class="nav-link">Home</RouterLink>
+        <RouterLink to="/heatmap" class="nav-link">HeatMap</RouterLink>
+        <RouterLink to="/cool-refuges" class="nav-link">Cool Refuges</RouterLink>
       </nav>
 
       <button class="btn-alerts">Get Alerts</button>
@@ -70,7 +70,7 @@
   color: var(--color-primary);
 }
 
-.nav-link.active {
+.nav-link.router-link-active {
   color: var(--color-primary);
   border-bottom: 2px solid var(--color-primary);
 }
