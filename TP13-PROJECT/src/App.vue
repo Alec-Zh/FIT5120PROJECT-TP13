@@ -1,26 +1,26 @@
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue';
+import { ref, onMounted, onUnmounted } from 'vue'
 
-const showBackToTop = ref(false);
+const showBackToTop = ref(false)
 
 const scrollToTop = () => {
   window.scrollTo({
     top: 0,
-    behavior: 'smooth'
-  });
-};
+    behavior: 'smooth',
+  })
+}
 
 const handleScroll = () => {
-  showBackToTop.value = window.scrollY > 300;
-};
+  showBackToTop.value = window.scrollY > 300
+}
 
 onMounted(() => {
-  window.addEventListener('scroll', handleScroll);
-});
+  window.addEventListener('scroll', handleScroll)
+})
 
 onUnmounted(() => {
-  window.removeEventListener('scroll', handleScroll);
-});
+  window.removeEventListener('scroll', handleScroll)
+})
 </script>
 
 <template>
@@ -228,9 +228,9 @@ onUnmounted(() => {
       </footer>
 
       <!-- Back to Top Button -->
-      <button 
-        v-if="showBackToTop" 
-        class="back-to-top" 
+      <button
+        v-if="showBackToTop"
+        class="back-to-top"
         @click="scrollToTop"
         aria-label="Back to top"
       >
@@ -331,6 +331,12 @@ body {
   background-position: center;
   background-attachment: fixed;
   /* padding: 4rem 2rem; */
+}
+
+@supports not (background-attachment: fixed) {
+  .main-content {
+    background-attachment: scroll;
+  }
 }
 
 .hero {
