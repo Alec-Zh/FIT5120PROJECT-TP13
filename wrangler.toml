@@ -1,0 +1,5 @@
+name = "fit5120project-tp13"
+compatibility_date = "2024-01-01"
+
+[build]
+command = "pnpm install --no-frozen-lockfile && pnpm run build"
