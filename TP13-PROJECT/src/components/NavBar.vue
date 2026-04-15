@@ -25,10 +25,10 @@ const closeMenu = () => {
       <nav class="nav">
         <RouterLink to="/" class="nav-link">Home</RouterLink>
         <RouterLink to="/heatmap" class="nav-link">HeatMap</RouterLink>
-        <RouterLink to="/cool-refuges" class="nav-link">Cool Refuges</RouterLink>
+        <!-- <RouterLink to="/cool-refuges" class="nav-link">Cool Refuges</RouterLink> -->
       </nav>
 
-      <button class="btn-alerts desktop-only" @click="showAlertModal = true">Get Alerts</button>
+      <!-- <button class="btn-alerts desktop-only" @click="showAlertModal = true">Get Alerts</button> -->
 
       <!-- 汉堡按钮（移动端） -->
       <button class="hamburger" @click="toggleMenu" aria-label="Toggle menu">
@@ -42,10 +42,10 @@ const closeMenu = () => {
     <div class="mobile-menu" :class="{ active: menuOpen }">
       <RouterLink to="/" class="mobile-link" @click="closeMenu">Home</RouterLink>
       <RouterLink to="/heatmap" class="mobile-link" @click="closeMenu">HeatMap</RouterLink>
-      <RouterLink to="/cool-refuges" class="mobile-link" @click="closeMenu"
+      <!-- <RouterLink to="/cool-refuges" class="mobile-link" @click="closeMenu"
         >Cool Refuges</RouterLink
-      >
-      <button class="btn-alerts mobile-btn" @click="showAlertModal = true">Get Alerts</button>
+      > -->
+      <!-- <button class="btn-alerts mobile-btn" @click="showAlertModal = true">Get Alerts</button> -->
     </div>
   </header>
 </template>

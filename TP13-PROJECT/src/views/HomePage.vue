@@ -15,24 +15,23 @@ const showAlertModal = ref(false)
       <div class="heroWrip">
          <div class="hero">
         <div class="hero-left">
-          <h1 class="hero-title" v-hover-scale="1.2">
+          <h1 class="hero-title" v-hover-scale="1.05">
             Stay Safe and<br />
             <span class="highlight">Cool in Melbourne</span>
           </h1>
-          <p class="hero-description" v-hover-scale="1.5">
-            Comprehensive resources and real-time guidance to navigate Melbourne's rising
-            temperatures with confidence and care.
+          <p class="hero-description" v-hover-scale="1.05">
+            Helping older residents (60+) stay safe in the heat. The Heat Map shows hot areas based on temperature, tree cover, and elderly population, helping find cooler, safer places nearby.
           </p>
           <div class="hero-buttons">
-            <button class="btn-primary"><span class="icon" v-hover-scale="1.2">❄️ Find Cool Refuges</span></button>
-            <button class="btn-secondary"><span class="icon" v-hover-scale="1.2"> 📃 View Heat Map</span></button>
+            <!-- <button class="btn-primary"><span class="icon" v-hover-scale="1.2">❄️ Find Cool Refuges</span></button> -->
+            <button class="btn-secondary"><span class="icon" v-hover-scale="1.2">🧾 View Heat Map</span></button>
           </div>
         </div>
       </div>
       </div>
      
 
-      <section class="heat-impact-section">
+      <!-- <section class="heat-impact-section">
         <h2 class="heat-impact-title" v-hover-scale="1.5">Heat Impact in Numbers</h2>
         <div class="heat-impact-grid">
           <div class="impact-card blue" >
@@ -56,13 +55,12 @@ const showAlertModal = ref(false)
             <div class="impact-label" v-hover-scale="1.2">hotter in areas without sufficient shade</div>
           </div>
         </div>
-      </section>
+      </section> -->
 
       <section class="why-matters-section">
         <h2 class="why-matters-title" v-hover-scale="1.2">Why Heat Protection Matters</h2>
         <p class="why-matters-subtitle" v-hover-scale="1.2">
-          Simple facts about how our bodies change and why we need to stay alert during summer
-          months.
+          Older adults (60+) are more sensitive to heat and at higher risk during hot weather. Staying cool and hydrated is important.
         </p>
         <div class="why-matters-grid">
           <div class="matter-card" >
@@ -156,42 +154,52 @@ const showAlertModal = ref(false)
         <div class="info-grid">
           <div class="info-left">
             <span class="tag vulnerability" v-hover-scale="1.2">VULNERABILITY AWARENESS</span>
-            <h2 class="section-title" v-hover-scale="1.2">Heat Vulnerability Map</h2>
-            <p class="section-description" v-hover-scale="1.2">
-              This map highlights heat levels across Melbourne suburbs. We specifically track areas
-              with high elderly population density to ensure our guardians have the support they
-              need where it's needed most.
+            <h2 class="section-title" v-hover-scale="1.05">Heat Vulnerability Map</h2>
+            <p class="section-description" v-hover-scale="1.05">
+              The Heat Vulnerability Map shows heat risk levels across Melbourne based on temperature, tree coverage, and elderly population density, highlighting areas where older adults may be more vulnerable.
             </p>
             <div class="map-image">
-              <img src="/reli.jpg" alt="Heat Vulnerability Map of Melbourne" />
+              <img src="/reli1.png" alt="Heat Vulnerability Map of Melbourne" />
             </div>
-            <a class="explore-link" v-hover-scale="1.2">Explore Heat Map →</a>
+             <RouterLink class="explore-link" to="/heatmap"  v-hover-scale="1.05">Explore Heat Map →</RouterLink>
           </div>
 
           <div class="info-right">
             <div class="risk-level-card">
               <h3 class="risk-level-title" v-hover-scale="1.2">Risk Level</h3>
               <div class="risk-levels">
-                <div class="risk-level-item">
-                  <span class="risk-dot green"></span>
-                  <span class="risk-label" v-hover-scale="1.2">Low</span>
+                <div>
+                  <div class="risk-level-item">
+                    <span class="risk-dot green"></span>
+                    <span class="risk-label" v-hover-scale="1.2">Low</span>
+                  </div>
+                  <span class="risk-desc" v-hover-scale="1.1">Lower temperatures and greater tree cover; older adults are less affected by heat.</span>
                 </div>
-                <div class="risk-level-item">
-                  <span class="risk-dot yellow"></span>
-                  <span class="risk-label" v-hover-scale="1.2">Moderate</span>
+                <div >
+                  <div class="risk-level-item">
+                    <span class="risk-dot yellow"></span>
+                    <span class="risk-label" v-hover-scale="1.2">Moderate</span>
+                  </div>
+                
+                  <span class="risk-desc" v-hover-scale="1.1">Higher temperatures or limited shade; older adults should take precautions against heat.</span>
                 </div>
-                <div class="risk-level-item">
-                  <span class="risk-dot orange"></span>
-                  <span class="risk-label" v-hover-scale="1.2">High</span>
+                <div>
+                  <div  class="risk-level-item">
+                    <span class="risk-dot red"></span>
+                    <span class="risk-label" v-hover-scale="1.2">High</span>
+                  </div>
+                 
+                  <span class="risk-desc" v-hover-scale="1.1">High temperatures, low tree cover, and a larger older population; older adults are more vulnerable to heat.</span>
                 </div>
-                <div class="risk-level-item">
+                <!-- <div class="risk-level-item">
                   <span class="risk-dot red"></span>
                   <span class="risk-label" v-hover-scale="1.2">Very High</span>
-                </div>
+                  <span class="risk-desc" v-hover-scale="1.1">Extremely high temperatures, low tree cover, and a large population density.</span>
+                </div> -->
               </div>
             </div>
 
-            <div class="high-risk-stats">
+            <!-- <div class="high-risk-stats">
               <h3 class="stats-title" v-hover-scale="1.2">Risk Areas:</h3>
               <div class="stat-item">
                 <span class="stat-icon" v-hover-scale="1.2">👤</span>
@@ -207,12 +215,12 @@ const showAlertModal = ref(false)
                   <span class="stat-label" v-hover-scale="1.2">avg surface<br />temperature</span>
                 </div>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
       </section>
 
-      <section class="cool-refuges-section">
+      <!-- <section class="cool-refuges-section">
         <div class="cool-refuges-container">
           <span class="tag safe" v-hover-scale="1.2">SAFE SPACES</span>
           <h2 class="cool-refuges-title" v-hover-scale="1.2">Find Your Local Cool Refuges</h2>
@@ -267,7 +275,7 @@ const showAlertModal = ref(false)
 
             <div class="refuges-right">
               <div class="refuge-image">
-                <img src="/pic2.webp" alt="Senior reading in library" />
+                <img src="/pic1.jpg" alt="Senior reading in library" />
               </div>
             </div>
           </div>
@@ -279,54 +287,59 @@ const showAlertModal = ref(false)
             </button>
           </div>
         </div>
-      </section>
+      </section> -->
 
       <section class="risk-section">
         <h2 class="risk-title" v-hover-scale="1.2">How We Calculate Risk</h2>
         <p class="risk-description" v-hover-scale="1.2">
-          We combine three key factors to determine the heat safety level for every suburb in
-          Melbourne.
+          Three key factors determine the heat safety level for each suburb of Melbourne.
         </p>
         <div class="risk-calculate-cards">
           <div class="risk-calc-card temp">
+            <div class="card-image">
+              <img src="/temperature.png" alt="Temperature" />
+            </div>
             <div class="calc-header">
-              <span class="calc-icon" v-hover-scale="1.2">🌡️</span>
               <div class="calc-title-group">
                 <span class="calc-label" v-hover-scale="1.2">Temperature</span>
                 <span class="calc-value green" v-hover-scale="1.2">36-40°C</span>
               </div>
             </div>
             <ul class="calc-list">
-              <li v-hover-scale="1.2"><span class="check">✓</span> 10-15 extreme heat days/year</li>
-              <li v-hover-scale="1.2"><span class="check">✓</span> Higher night temperatures increase health risk</li>
+              <li v-hover-scale="1.1"><span class="dot red"></span> 10-15 extreme heat days/year</li>
+              <li v-hover-scale="1.1"><span class="dot red"></span> Higher night temperatures increase health risk</li>
             </ul>
           </div>
           <div class="risk-calc-card tree">
+            <div class="card-image">
+              <img src="/tree.jpg" alt="Tree Coverage" />
+            </div>
             <div class="calc-header">
-              <span class="calc-icon" v-hover-scale="1.2">🌳</span>
               <div class="calc-title-group">
                 <span class="calc-label" v-hover-scale="1.2">Tree Coverage</span>
                 <span class="calc-value green" v-hover-scale="1.2">&lt; 15%</span>
               </div>
             </div>
             <ul class="calc-list">
-              <li v-hover-scale="1.2"><span class="check" >✓</span> Low canopy = 5-7°C hotter</li>
-              <li v-hover-scale="1.2"><span class="check" >✓</span> Less shade means higher body heat and dehydration risk</li>
-              <li v-hover-scale="1.2"><span class="check" >✓</span> Less shade means higher body heat and dehydration risk
+              <li v-hover-scale="1.1"><span class="dot green"></span> Low canopy = 5-7°C hotter</li>
+              <li v-hover-scale="1.1"><span class="dot green"></span> Less shade means higher body heat and dehydration risk</li>
+              <li v-hover-scale="1.1"><span class="dot green"></span> Less shade means higher body heat and dehydration risk
               </li>
             </ul>
           </div>
           <div class="risk-calc-card elderly">
+            <div class="card-image">
+              <img src="/Elderly.png" alt="Elderly Population" />
+            </div>
             <div class="calc-header">
-              <span class="calc-icon" v-hover-scale="1.2">👴</span>
               <div class="calc-title-group">
                 <span class="calc-label" v-hover-scale="1.2">Elderly Population</span>
                 <span class="calc-value purple" v-hover-scale="1.2">Up to 30%</span>
               </div>
             </div>
             <ul class="calc-list">
-              <li v-hover-scale="1.2"><span class="check" >✓</span> More sensitive to heat</li>
-              <li v-hover-scale="1.2"><span class="check" >✓</span> May need extra support to stay safe and cool</li>
+              <li v-hover-scale="1.1"><span class="dot purple"></span> More sensitive to heat</li>
+              <li v-hover-scale="1.1"><span class="dot purple"></span> May need extra support to stay safe and cool</li>
             </ul>
           </div>
         </div>
@@ -515,14 +528,18 @@ const showAlertModal = ref(false)
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 3fr 1fr;
+  grid-template-columns: 2fr 1fr;
   gap: 4rem;
 }
 
 .info-left,
 .info-right {
   display: flex;
+ 
   flex-direction: column;
+}
+.info-right{
+ margin-top: 115px;
 }
 
 .risk-level-card {
@@ -543,12 +560,13 @@ const showAlertModal = ref(false)
 .risk-levels {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 2.8rem;
 }
 
 .risk-level-item {
   display: flex;
   align-items: center;
+  margin-bottom: 10px;
   gap: 0.75rem;
 }
 
@@ -575,10 +593,13 @@ const showAlertModal = ref(false)
   background-color: #dc2626;
 }
 
+.risk-desc{
+  padding-left: 20px;
+}
 .risk-label {
   font-size: 1rem;
   color: #1a1a1a;
-  font-weight: 500;
+  font-weight: bold;
 }
 
 .high-risk-stats {
@@ -675,7 +696,7 @@ const showAlertModal = ref(false)
 
 .map-image img {
   width: 100%;
-  height: 300px;
+  height: 400px;
   object-fit: cover;
   display: block;
 }
@@ -848,8 +869,6 @@ const showAlertModal = ref(false)
 .refuges-right {
   display: flex;
   align-items: stretch;
-  width: 100%;
-  height: 400px;
 }
 
 .refuge-image {
@@ -1105,20 +1124,18 @@ const showAlertModal = ref(false)
   border-radius: 8px;
   padding: 1rem;
   text-align: center;
-  border: 2px solid #e5e7eb;
+  /* border: 2px solid #e5e7eb; */
 }
 
-.hydration-box.normal {
-  background-color: #f9fafb;
-}
 
-.hydration-box.senior {
+
+/* .hydration-box.senior {
   background-color: #16a34a;
   border-color: #16a34a;
-}
+} */
 
 .hydration-box.senior .hydration-label {
-  color: white;
+  color: #16a34a;
 }
 
 .drop-icon {
@@ -1245,7 +1262,7 @@ const showAlertModal = ref(false)
 }
 
 .risk-section {
-  background-color: #ffffff;
+  background-color: #f0f7ff;
   padding: 5rem 2rem;
   text-align: center;
 }
@@ -1281,6 +1298,7 @@ const showAlertModal = ref(false)
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
+  overflow: hidden;
 }
 
 .risk-calc-card:hover {
@@ -1303,11 +1321,23 @@ const showAlertModal = ref(false)
   background-color: #faf5ff;
 }
 
+.card-image {
+  margin: -1.5rem -1.5rem 1.5rem -1.5rem;
+  overflow: hidden;
+}
+
+.card-image img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
 .calc-header {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  margin-bottom: 1rem;
+  /* margin-bottom: 1rem; */
 }
 
 .calc-icon {
@@ -1320,15 +1350,16 @@ const showAlertModal = ref(false)
 }
 
 .calc-label {
-  font-size: 0.875rem;
+  font-size: 20px;
   color: #666;
-  font-weight: 500;
+  font-weight: bold;
 }
 
 .calc-value {
   font-size: 1.5rem;
   font-weight: 800;
   color: #ea580c;
+  margin: 10px 0;
 }
 
 .calc-value.green {
@@ -1355,14 +1386,28 @@ const showAlertModal = ref(false)
   line-height: 1.4;
 }
 
-.calc-list .check {
-  color: #16a34a;
-  font-weight: 700;
+.calc-list .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
   flex-shrink: 0;
+  margin-top: 0.375rem;
+}
+
+.calc-list .dot.red {
+  background-color: #ef4444;
+}
+
+.calc-list .dot.green {
+  background-color: #16a34a;
+}
+
+.calc-list .dot.purple {
+  background-color: #7c3aed;
 }
 
 .stay-healthy-section {
-  background-color: #f0f7ff;
+  background-color: #fff;
   padding: 5rem 2rem;
   text-align: center;
 }
