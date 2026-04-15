@@ -159,7 +159,7 @@ const showAlertModal = ref(false)
               The Heat Vulnerability Map shows heat risk levels across Melbourne based on temperature, tree coverage, and elderly population density, highlighting areas where older adults may be more vulnerable.
             </p>
             <div class="map-image">
-              <img src="/reli1.png" alt="Heat Vulnerability Map of Melbourne" />
+              <img src="/reli2.png" alt="Heat Vulnerability Map of Melbourne" />
             </div>
              <RouterLink class="explore-link" to="/heatmap"  v-hover-scale="1.05">Explore Heat Map →</RouterLink>
           </div>
@@ -302,7 +302,7 @@ const showAlertModal = ref(false)
             <div class="calc-header">
               <div class="calc-title-group">
                 <span class="calc-label" v-hover-scale="1.2">Temperature</span>
-                <span class="calc-value green" v-hover-scale="1.2">36-40°C</span>
+                <span class="calc-value orange" v-hover-scale="1.2">36-40°C</span>
               </div>
             </div>
             <ul class="calc-list">
