@@ -25,13 +25,9 @@ const closeMenu = () => {
         <RouterLink to="/" class="nav-link">Home</RouterLink>
         <RouterLink to="/heatmap" class="nav-link">HeatMap</RouterLink>
         <!-- <RouterLink to="/cool-refuges" class="nav-link">Cool Refuges</RouterLink> -->
-        <!-- Iteration 2 -->
       </nav>
 
-      <!-- Right slot kept for layout balance; Get Alerts is Iteration 2 -->
-      <div class="nav-right">
-        <!-- <button class="btn-alerts" @click="showAlertModal = true">Get Alerts</button> -->
-      </div>
+      <!-- <button class="btn-alerts desktop-only" @click="showAlertModal = true">Get Alerts</button> -->
 
       <!-- Hamburger (mobile) -->
       <button class="hamburger" @click="toggleMenu" aria-label="Toggle menu">
@@ -45,10 +41,10 @@ const closeMenu = () => {
     <div class="mobile-menu" :class="{ active: menuOpen }">
       <RouterLink to="/" class="mobile-link" @click="closeMenu">Home</RouterLink>
       <RouterLink to="/heatmap" class="mobile-link" @click="closeMenu">HeatMap</RouterLink>
-      <!-- <RouterLink to="/cool-refuges" class="mobile-link" @click="closeMenu">Cool Refuges</RouterLink> -->
-      <!-- Iteration 2 -->
+      <!-- <RouterLink to="/cool-refuges" class="mobile-link" @click="closeMenu"
+        >Cool Refuges</RouterLink
+      > -->
       <!-- <button class="btn-alerts mobile-btn" @click="showAlertModal = true">Get Alerts</button> -->
-      <!-- Iteration 2 -->
     </div>
   </header>
 </template>
