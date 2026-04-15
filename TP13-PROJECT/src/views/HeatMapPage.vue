@@ -138,14 +138,14 @@ onMounted(fetchSuburbs)
         </p>
       </div>
 
-      <div ref="searchRef">
-        <SuburbSearch :suburbs="innerSuburbs" @select="selectSuburb" />
-      </div>
-
       <div v-if="loading" class="status-msg">Loading suburb data...</div>
       <div v-else-if="error" class="status-msg error">{{ error }}</div>
 
       <template v-else>
+        <!-- searchRef must be inside v-else so suburbs prop is populated before search is usable -->
+        <div ref="searchRef">
+          <SuburbSearch :suburbs="innerSuburbs" @select="selectSuburb" />
+        </div>
         <SuburbMap
           :suburbs="innerSuburbs"
           :selectedSuburb="selectedSuburb"

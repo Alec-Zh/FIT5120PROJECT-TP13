@@ -63,7 +63,10 @@ function clear() {
       ✕
     </button>
 
-    <ul v-if="isOpen && results.length > 0" class="dropdown" role="listbox">
+    <ul v-if="isOpen && query.trim()" class="dropdown" role="listbox">
+      <li v-if="results.length === 0" class="dropdown-empty">
+        No results in Inner Melbourne — please try a different suburb name.
+      </li>
       <li
         v-for="suburb in results"
         :key="suburb.suburb_name"
@@ -145,8 +148,15 @@ function clear() {
   list-style: none;
   margin: 0;
   padding: 0.25rem 0;
-  z-index: 100;
+  z-index: 1001;
   overflow: hidden;
+}
+
+.dropdown-empty {
+  padding: 0.75rem 1rem;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  font-style: italic;
 }
 
 .dropdown-item {
@@ -174,7 +184,7 @@ function clear() {
 }
 
 /* Risk level accent on the left edge */
-.dropdown-item.high  { border-left: 3px solid #EF4444; }
+.dropdown-item.high     { border-left: 3px solid #EF4444; }
 .dropdown-item.moderate { border-left: 3px solid #F97316; }
-.dropdown-item.low   { border-left: 3px solid #22C55E; }
+.dropdown-item.low      { border-left: 3px solid #22C55E; }
 </style>
