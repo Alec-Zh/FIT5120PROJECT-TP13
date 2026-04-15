@@ -8,9 +8,9 @@ defineProps({
 })
 
 const config = {
-  higher: { label: 'Higher Heat', bg: '#FEE2E2', color: '#991B1B', border: '#FECACA' },
-  moderate: { label: 'Moderate Heat', bg: '#FEF3C7', color: '#92400E', border: '#FDE68A' },
-  lower: { label: 'Lower Heat', bg: '#DCFCE7', color: '#166534', border: '#BBF7D0' },
+  higher: { label: 'Hot', bg: '#FEE2E2', color: '#991B1B', border: '#FECACA' },
+  moderate: { label: 'Warm', bg: '#FEF3C7', color: '#92400E', border: '#FDE68A' },
+  lower: { label: 'Mild', bg: '#DCFCE7', color: '#166534', border: '#BBF7D0' },
 }
 </script>
 
@@ -32,7 +32,7 @@ const config = {
   display: inline-block;
   padding: 0.3rem 0.85rem;
   border-radius: 50px;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   font-weight: 700;
   letter-spacing: 0.2px;
   white-space: nowrap;

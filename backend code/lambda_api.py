@@ -34,7 +34,9 @@ def get_all_suburbs(cursor):
             v.vegetation_index AS tree_canopy_percent,
             p.elderly_population,
             p.total_population,
-            r.risk_level
+            r.risk_level,
+            r.heat_score,
+            r.vulnerability_score
         FROM Suburb s
         LEFT JOIN Heat_Data h ON s.suburb_id = h.suburb_id
         LEFT JOIN Vegetation_Data v ON s.suburb_id = v.suburb_id
