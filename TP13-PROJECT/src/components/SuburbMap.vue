@@ -23,6 +23,8 @@ let geoJsonLayer = null
 const DEFAULT_CENTER = [-37.8136, 144.9631]
 const DEFAULT_ZOOM = 12
 const SELECTED_ZOOM = 14
+let fitZoom = DEFAULT_ZOOM // actual zoom after fitBounds, used when deselecting
+let fitCenter = DEFAULT_CENTER // actual center after fitBounds
 
 const riskColors = {
   high: { fill: '#EF4444', border: '#B91C1C' },
@@ -110,6 +112,11 @@ async function initMap() {
     }).addTo(map)
 
     map.fitBounds(geoJsonLayer.getBounds(), { padding: [20, 20] })
+    // Store the resulting zoom/center so deselect can fly back to exactly this view
+    map.once('moveend', () => {
+      fitZoom = map.getZoom()
+      fitCenter = [map.getCenter().lat, map.getCenter().lng]
+    })
   } catch (e) {
     console.error('Failed to load GeoJSON:', e)
   }
@@ -126,7 +133,7 @@ function flyToSuburb(suburb) {
   if (!map || !geoJsonLayer) return
 
   if (!suburb) {
-    map.flyTo(DEFAULT_CENTER, DEFAULT_ZOOM, { duration: 0.6 })
+    map.flyTo(fitCenter, fitZoom, { duration: 0.6 })
     return
   }
 

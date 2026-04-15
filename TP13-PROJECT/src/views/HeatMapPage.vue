@@ -144,8 +144,8 @@ onMounted(fetchSuburbs)
       <div class="page-header">
         <h1 class="page-title">Heat Vulnerability Map</h1>
         <p class="page-desc">
-          Explore heat levels across Melbourne suburbs based on temperature, tree coverage, and
-          elderly population density.
+          See how hot it is across inner Melbourne and which areas may need extra care during hot
+          weather. Click on any suburb to view details.
         </p>
       </div>
 
