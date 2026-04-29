@@ -13,8 +13,8 @@ const closeMenu = () => {
   <header class="header">
     <div class="header-container">
       <RouterLink to="/" class="brand" @click="closeMenu">
-        <img src="/logo.png" alt="CoolPath Melbourne" class="logo" />
-        <span class="brand-name">CoolPath</span>
+        <img src="/logo.png" alt="MelbCool Melbourne" class="logo" />
+        <span class="brand-name">MelbCool</span>
       </RouterLink>
 
       <nav class="nav">
@@ -85,7 +85,9 @@ const closeMenu = () => {
   transition: color 0.3s ease;
   white-space: nowrap;
 }
-.nav-link:hover { color: var(--color-primary); }
+.nav-link:hover {
+  color: var(--color-primary);
+}
 .nav-link.router-link-active {
   color: var(--color-primary);
   border-bottom: 2px solid var(--color-primary);
@@ -108,9 +110,15 @@ const closeMenu = () => {
   transition: all 0.3s ease;
   transform-origin: center;
 }
-.hamburger span.open:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-.hamburger span.open:nth-child(2) { opacity: 0; }
-.hamburger span.open:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+.hamburger span.open:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.hamburger span.open:nth-child(2) {
+  opacity: 0;
+}
+.hamburger span.open:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
 .mobile-menu {
   display: none;
   flex-direction: column;
@@ -118,7 +126,9 @@ const closeMenu = () => {
   border-top: 1px solid var(--color-border);
   gap: 0.5rem;
 }
-.mobile-menu.active { display: flex; }
+.mobile-menu.active {
+  display: flex;
+}
 .mobile-link {
   text-decoration: none;
   color: var(--color-text-muted);
@@ -128,9 +138,15 @@ const closeMenu = () => {
   transition: color 0.3s ease;
 }
 .mobile-link:hover,
-.mobile-link.router-link-active { color: var(--color-primary); }
+.mobile-link.router-link-active {
+  color: var(--color-primary);
+}
 @media (max-width: 768px) {
-  .nav { display: none; }
-  .hamburger { display: flex; }
+  .nav {
+    display: none;
+  }
+  .hamburger {
+    display: flex;
+  }
 }
 </style>
