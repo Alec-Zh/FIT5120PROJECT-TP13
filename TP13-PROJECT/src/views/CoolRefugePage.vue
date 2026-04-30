@@ -60,8 +60,16 @@ const selectedRefuge = ref(null)
 const showTempAlert = ref(false)
 const currentTemp = ref(0)
 
-// Mapbox access token
-mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_ACCESS_TOKEN || ''
+// Mapbox access token（从 Lambda 获取）
+const initMapboxToken = async () => {
+  try {
+    const response = await fetch('https://qcbqul6ys2.execute-api.ap-southeast-2.amazonaws.com/mapbox-token')
+    const data = await response.json()
+    mapboxgl.accessToken = data.token
+  } catch (err) {
+    console.error('Failed to fetch Mapbox token:', err)
+  }
+}
 
 // 获取指定位置的温度
 const fetchTemperature = async (latitude, longitude) => {
@@ -481,7 +489,10 @@ watch(refuges, () => {
 })
 
 // 页面加载时获取用户位置和数据
-onMounted(() => {
+onMounted(async () => {
+  // 先获取 Mapbox token
+  await initMapboxToken()
+  
   // 自动请求位置权限（会触发浏览器弹框）
   getUserLocation()
   
